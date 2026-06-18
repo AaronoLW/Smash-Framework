@@ -4,7 +4,7 @@ using SDL3;
 
 namespace Smash.Graphics;
 
-public class Texture2D : IDisposable
+public class Texture2D : IDisposable, IAsset
 {
     public float Width { get; private set; }
     public float Height { get; private set; }

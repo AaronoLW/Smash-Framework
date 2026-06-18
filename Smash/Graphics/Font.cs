@@ -2,7 +2,7 @@ using System.Numerics;
 using SDL3;
 using Smash;
 
-public class Font : IDisposable
+public class Font : IDisposable, IAsset
 {
     public nint Handle { get; }
 
@@ -13,6 +13,7 @@ public class Font : IDisposable
     public Font(nint fontHandle, float pointSize)
     {
         Handle = fontHandle;
+        PointSize = pointSize;
     }
 
     public Vector2 MeasureString(string text)
