@@ -23,14 +23,47 @@ public static class AssetManager
     /// <summary>
     /// Tries to get the asset with the specified name
     /// </summary>
-    public static T TryGet<T>(string assetName) where T : IAsset
+    public static T? TryGet<T>(string assetName) where T : IAsset
     {
         int id;
 
         if (!_aliases.TryGetValue(assetName, out id))
-            throw new Exception($"""Asset "{assetName}" could not be found""");
+            return default;
 
         return (T)_loadedAssets[id];
+    }
+
+    /// <summary>
+    /// Gets the asset with the specified id
+    /// </summary>
+    public static T Get<T>(int assetId) where T : IAsset
+    {
+        return (T)_loadedAssets[assetId];
+    } 
+
+    /// <summary>
+    /// Tries to get the asset with the specified id
+    /// </summary>
+    public static T? TryGet<T>(int assetId) where T : IAsset
+    {
+        if (_loadedAssets.Count - 1 < assetId) return default;
+
+        return (T)_loadedAssets[assetId];
+    }
+
+    public static int GetAssetId(string assetName)
+    {
+        if (_aliases.TryGetValue(assetName, out int id))
+        {
+            return id;
+        }
+
+        throw new Exception($"{assetName} could not be found");
+    }
+
+    public static string GetAssetName(int id)
+    {
+        return _aliases.FirstOrDefault(x => x.Value == id).Key;
     }
 
     /// <summary>
