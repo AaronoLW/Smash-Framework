@@ -184,7 +184,7 @@ public class Renderer : IDisposable
     /// <summary>
     /// Renders text to the screen at the specified position
     /// </summary>
-    public void RenderText(Font font, int pointSize, string text, Vector2 position, Color color)
+    public void RenderText(Font font, float pointSize, string text, Vector2 position, Color color)
     {
         nint textObject = font.GetOrCreateText(text, pointSize);
 
