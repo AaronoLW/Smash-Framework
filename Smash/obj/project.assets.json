@@ -293,7 +293,7 @@
     "/home/katzi/.nuget/packages/": {}
   },
   "project": {
-    "version": "1.1.51",
+    "version": "1.1.52",
     "restore": {
       "projectUniqueName": "/media/SDL3/Smash/Smash/SmashFramework.csproj",
       "projectName": "SmashFramework",
@@ -308,7 +308,6 @@
         "net10.0"
       ],
       "sources": {
-        "/media/NuGetLocalFeed/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -366,7 +365,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.108/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.109/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

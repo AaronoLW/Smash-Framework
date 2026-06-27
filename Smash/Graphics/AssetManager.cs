@@ -140,7 +140,7 @@ public static class AssetManager
         if (!File.Exists(fullPath)) throw new FileNotFoundException($"Font at {fullPath} could not be found");
 
         nint handle = TTF.OpenFont(fullPath, pointSize);
-        Font font = new Font(handle, pointSize);
+        Font font = new Font(handle);
 
         _aliases.Add(fontName, _loadedAssets.Count);
         _loadedAssets.Add(font);

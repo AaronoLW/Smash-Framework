@@ -6,40 +6,42 @@ public class Font : IDisposable, IAsset
 {
     public nint Handle { get; }
 
-    public float PointSize { get; }
+    internal Dictionary<int, Dictionary<string, nint>> _alreadyCreatedTexts = new();
 
-    internal Dictionary<string, nint> _alreadyCreatedTexts = new();
-
-    public Font(nint fontHandle, float pointSize)
+    public Font(nint fontHandle)
     {
         Handle = fontHandle;
-        PointSize = pointSize;
     }
 
-    public Vector2 MeasureString(string text)
+    public Vector2 MeasureString(string text, int pointSize)
     {
-        TTF.GetTextSize(GetOrCreateText(text), out int widht, out int height);
+        TTF.GetTextSize(GetOrCreateText(text, pointSize), out int widht, out int height);
         return new Vector2(widht, height);
     }
 
-    internal nint GetOrCreateText(string text)
+    internal nint GetOrCreateText(string text, int pointSize)
     {
-        if (_alreadyCreatedTexts.TryGetValue(text, out nint textObject))
+        if (_alreadyCreatedTexts.TryGetValue(pointSize, out var font))
+
+        if (font.TryGetValue(text, out nint textObject))
         {
             return textObject;
         }
 
         nint textObjectHandle = TTF.CreateText(SmashEngine._fontEngine, Handle, text, 0);
-        _alreadyCreatedTexts[text] = textObjectHandle;
+        _alreadyCreatedTexts[pointSize][text] = textObjectHandle;
 
         return textObjectHandle;
     }
 
     public void Dispose()
     {
-        foreach (nint alreadyCreatedText in _alreadyCreatedTexts.Values)
+        foreach (Dictionary<string, nint> kvp in _alreadyCreatedTexts.Values)
         {
-            TTF.DestroyText(alreadyCreatedText);
+            foreach (nint alreadyCreatedText in kvp.Values)
+            {
+                TTF.DestroyText(alreadyCreatedText);
+            }
         }
 
         TTF.CloseFont(Handle);
