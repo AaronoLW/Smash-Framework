@@ -132,15 +132,14 @@ public static class AssetManager
     /// <summary>
     /// Loads a Font from a .ttf file relative to the root directory path
     /// </summary>
-    public static void LoadFont(string relativePath, float pointSize)
+    public static void LoadFont(string relativePath)
     {
         string fullPath = Path.Combine(_rootDirectoryPath, relativePath);
         string fontName = Path.GetFileNameWithoutExtension(fullPath);
 
         if (!File.Exists(fullPath)) throw new FileNotFoundException($"Font at {fullPath} could not be found");
 
-        nint handle = TTF.OpenFont(fullPath, pointSize);
-        Font font = new Font(handle);
+        Font font = new Font(fullPath);
 
         _aliases.Add(fontName, _loadedAssets.Count);
         _loadedAssets.Add(font);

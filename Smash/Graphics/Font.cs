@@ -4,47 +4,52 @@ using Smash;
 
 public class Font : IDisposable, IAsset
 {
-    public nint Handle { get; }
+    internal string _fontPath;
+    internal Dictionary<float, (nint handle, Dictionary<string, nint> texts)> _alreadyCreatedTexts = new();
 
-    internal Dictionary<int, Dictionary<string, nint>> _alreadyCreatedTexts = new();
-
-    public Font(nint fontHandle)
+    public Font(string fontPath)
     {
-        Handle = fontHandle;
+        _fontPath = fontPath;
     }
 
-    public Vector2 MeasureString(string text, int pointSize)
+    public Vector2 MeasureString(string text, float pointSize)
     {
         TTF.GetTextSize(GetOrCreateText(text, pointSize), out int widht, out int height);
         return new Vector2(widht, height);
     }
 
-    internal nint GetOrCreateText(string text, int pointSize)
+    internal nint GetOrCreateText(string text, float pointSize)
     {
         if (_alreadyCreatedTexts.TryGetValue(pointSize, out var font))
-
-        if (font.TryGetValue(text, out nint textObject))
         {
-            return textObject;
+            if (font.texts.TryGetValue(text, out nint textObject))
+            {
+                return textObject;
+            }
+        }
+        else
+        {
+            _alreadyCreatedTexts.Add(pointSize, (TTF.OpenFont(_fontPath, pointSize), new()));
         }
 
-        nint textObjectHandle = TTF.CreateText(SmashEngine._fontEngine, Handle, text, 0);
-        _alreadyCreatedTexts[pointSize][text] = textObjectHandle;
+        nint textObjectHandle = TTF.CreateText(SmashEngine._fontEngine, _alreadyCreatedTexts[pointSize].handle, text, 0);
+        _alreadyCreatedTexts[pointSize].texts[text] = textObjectHandle;
 
         return textObjectHandle;
     }
 
     public void Dispose()
     {
-        foreach (Dictionary<string, nint> kvp in _alreadyCreatedTexts.Values)
+        foreach (var idklol in _alreadyCreatedTexts.Values)
         {
-            foreach (nint alreadyCreatedText in kvp.Values)
+            foreach (nint alreadyCreatedText in idklol.texts.Values)
             {
                 TTF.DestroyText(alreadyCreatedText);
             }
+
+            TTF.CloseFont(idklol.handle);
         }
 
-        TTF.CloseFont(Handle);
         _alreadyCreatedTexts.Clear();
     }
 }
