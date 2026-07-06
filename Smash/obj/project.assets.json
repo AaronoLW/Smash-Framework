@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net10.0": {
-      "SDL3-CS/3.3.6": {
+      "SDL3-CS/3.4.10.5": {
         "type": "package",
         "compile": {
           "lib/net10.0/SDL3-CS.dll": {
@@ -15,7 +15,7 @@
           }
         }
       },
-      "SDL3-CS.Native/3.3.6": {
+      "SDL3-CS.Native/3.4.2": {
         "type": "package",
         "compile": {
           "lib/net10.0/SDL3-CS.Native.dll": {
@@ -54,24 +54,44 @@
           }
         }
       },
-      "SDL3-CS.Native.Image/3.2.4": {
+      "SDL3-CS.Native.Image/3.5.0": {
         "type": "package",
         "compile": {
-          "lib/net9.0/SDL3-CS.Native.Image.dll": {
+          "lib/net10.0/SDL3-CS.Native.Image.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net9.0/SDL3-CS.Native.Image.dll": {
+          "lib/net10.0/SDL3-CS.Native.Image.dll": {
             "related": ".xml"
           }
         },
         "runtimeTargets": {
+          "runtimes/linux-arm64/native/libSDL3_image.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-x64/native/libSDL3_image.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-arm64/native/libSDL3_image.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/libSDL3_image.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
           "runtimes/win-arm64/native/SDL3_image.dll": {
             "assetType": "native",
             "rid": "win-arm64"
           },
           "runtimes/win-arm64/native/aom.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/aom_version.dll": {
             "assetType": "native",
             "rid": "win-arm64"
           },
@@ -83,11 +103,19 @@
             "assetType": "native",
             "rid": "win-arm64"
           },
+          "runtimes/win-arm64/native/libpng16-16.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
           "runtimes/win-arm64/native/libwebp.dll": {
             "assetType": "native",
             "rid": "win-arm64"
           },
           "runtimes/win-arm64/native/libwebpdemux.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/libwebpmux.dll": {
             "assetType": "native",
             "rid": "win-arm64"
           },
@@ -99,57 +127,73 @@
             "assetType": "native",
             "rid": "win-x64"
           },
+          "runtimes/win-x64/native/aom.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/aom_version.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/dav1d.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
           "runtimes/win-x64/native/libavif-16.dll": {
             "assetType": "native",
             "rid": "win-x64"
           },
-          "runtimes/win-x64/native/libtiff-6.dll": {
+          "runtimes/win-x64/native/libpng16-16.dll": {
             "assetType": "native",
             "rid": "win-x64"
           },
-          "runtimes/win-x64/native/libwebp-7.dll": {
+          "runtimes/win-x64/native/libwebp.dll": {
             "assetType": "native",
             "rid": "win-x64"
           },
-          "runtimes/win-x64/native/libwebpdemux-2.dll": {
+          "runtimes/win-x64/native/libwebpdemux.dll": {
             "assetType": "native",
             "rid": "win-x64"
           },
-          "runtimes/win-x86/native/SDL3_image.dll": {
+          "runtimes/win-x64/native/libwebpmux.dll": {
             "assetType": "native",
-            "rid": "win-x86"
+            "rid": "win-x64"
           },
-          "runtimes/win-x86/native/libavif-16.dll": {
+          "runtimes/win-x64/native/tiff.dll": {
             "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/libtiff-6.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/libwebp-7.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/libwebpdemux-2.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
+            "rid": "win-x64"
           }
         }
       },
-      "SDL3-CS.Native.TTF/3.2.2": {
+      "SDL3-CS.Native.TTF/3.3.0": {
         "type": "package",
         "compile": {
-          "lib/net9.0/SDL3-CS.Native.TTF.dll": {
+          "lib/net10.0/SDL3-CS.Native.TTF.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net9.0/SDL3-CS.Native.TTF.dll": {
+          "lib/net10.0/SDL3-CS.Native.TTF.dll": {
             "related": ".xml"
           }
         },
         "runtimeTargets": {
+          "runtimes/linux-arm64/native/libSDL3_ttf.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-x64/native/libSDL3_ttf.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-arm64/native/libSDL3_ttf.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/libSDL3_ttf.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
           "runtimes/win-arm64/native/SDL3_ttf.dll": {
             "assetType": "native",
             "rid": "win-arm64"
@@ -157,20 +201,16 @@
           "runtimes/win-x64/native/SDL3_ttf.dll": {
             "assetType": "native",
             "rid": "win-x64"
-          },
-          "runtimes/win-x86/native/SDL3_ttf.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
           }
         }
       }
     }
   },
   "libraries": {
-    "SDL3-CS/3.3.6": {
-      "sha512": "yE0nSFUpW95tnSKo07F56jC1u5iaevu5e5wd+m5JZeeglqS3hSnKzdRdpEf/TT65MJvGJuvugbQSdHtlypqQ+w==",
+    "SDL3-CS/3.4.10.5": {
+      "sha512": "85f//lN/cz/uGfkhVZSbN4AMUhJkW/39Zhd7e6fs5e+2zCGDwPOTZgDdymiyPvkJnDdy6LTI9M/4Ke1ms11naA==",
       "type": "package",
-      "path": "sdl3-cs/3.3.6",
+      "path": "sdl3-cs/3.4.10.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -188,14 +228,14 @@
         "lib/net9.0/SDL3-CS.dll",
         "lib/net9.0/SDL3-CS.xml",
         "logo.png",
-        "sdl3-cs.3.3.6.nupkg.sha512",
+        "sdl3-cs.3.4.10.5.nupkg.sha512",
         "sdl3-cs.nuspec"
       ]
     },
-    "SDL3-CS.Native/3.3.6": {
-      "sha512": "jkESpsMPanl771oI/Pr9PgS0xJnungRHr3h8odLwaGPP1MsoIhPcVmydljtFACYPSpMKMz+zXUvChiTxeqdm8w==",
+    "SDL3-CS.Native/3.4.2": {
+      "sha512": "Auef0/QUXRNqJYK45/8DNwTNPyxaG4R1s0zjjvyU3lKRi9hj+E6ygQ0Iw9Fj9Qw1eystK6puhtSkLhkJUH/V3w==",
       "type": "package",
-      "path": "sdl3-cs.native/3.3.6",
+      "path": "sdl3-cs.native/3.4.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -216,19 +256,21 @@
         "runtimes/osx-x64/native/libSDL3.dylib",
         "runtimes/win-arm64/native/SDL3.dll",
         "runtimes/win-x64/native/SDL3.dll",
-        "sdl3-cs.native.3.3.6.nupkg.sha512",
+        "sdl3-cs.native.3.4.2.nupkg.sha512",
         "sdl3-cs.native.nuspec"
       ]
     },
-    "SDL3-CS.Native.Image/3.2.4": {
-      "sha512": "fTc3QawEx1BlJKGU4yL5wQLbHB8wM+XMdQ2uRzYL3bmS9y0WGvXaNzldVHNQmzzYe0nkEaGmMtSAQIFbWecDVA==",
+    "SDL3-CS.Native.Image/3.5.0": {
+      "sha512": "ruLbeVe+SCLH2t/e5nD/G0Aiux8Z46L0pEMsI/DKRh7xnPQFSdgDzf6tUTeBncfaM7EcAypD2Z3csqY0Y4iCvQ==",
       "type": "package",
-      "path": "sdl3-cs.native.image/3.2.4",
+      "path": "sdl3-cs.native.image/3.5.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "README.md",
+        "lib/net10.0/SDL3-CS.Native.Image.dll",
+        "lib/net10.0/SDL3-CS.Native.Image.xml",
         "lib/net7.0/SDL3-CS.Native.Image.dll",
         "lib/net7.0/SDL3-CS.Native.Image.xml",
         "lib/net8.0/SDL3-CS.Native.Image.dll",
@@ -236,36 +278,45 @@
         "lib/net9.0/SDL3-CS.Native.Image.dll",
         "lib/net9.0/SDL3-CS.Native.Image.xml",
         "logo.png",
+        "runtimes/linux-arm64/native/libSDL3_image.so",
+        "runtimes/linux-x64/native/libSDL3_image.so",
+        "runtimes/osx-arm64/native/libSDL3_image.dylib",
+        "runtimes/osx-x64/native/libSDL3_image.dylib",
         "runtimes/win-arm64/native/SDL3_image.dll",
         "runtimes/win-arm64/native/aom.dll",
+        "runtimes/win-arm64/native/aom_version.dll",
         "runtimes/win-arm64/native/dav1d.dll",
         "runtimes/win-arm64/native/libavif-16.dll",
+        "runtimes/win-arm64/native/libpng16-16.dll",
         "runtimes/win-arm64/native/libwebp.dll",
         "runtimes/win-arm64/native/libwebpdemux.dll",
+        "runtimes/win-arm64/native/libwebpmux.dll",
         "runtimes/win-arm64/native/tiff.dll",
         "runtimes/win-x64/native/SDL3_image.dll",
+        "runtimes/win-x64/native/aom.dll",
+        "runtimes/win-x64/native/aom_version.dll",
+        "runtimes/win-x64/native/dav1d.dll",
         "runtimes/win-x64/native/libavif-16.dll",
-        "runtimes/win-x64/native/libtiff-6.dll",
-        "runtimes/win-x64/native/libwebp-7.dll",
-        "runtimes/win-x64/native/libwebpdemux-2.dll",
-        "runtimes/win-x86/native/SDL3_image.dll",
-        "runtimes/win-x86/native/libavif-16.dll",
-        "runtimes/win-x86/native/libtiff-6.dll",
-        "runtimes/win-x86/native/libwebp-7.dll",
-        "runtimes/win-x86/native/libwebpdemux-2.dll",
-        "sdl3-cs.native.image.3.2.4.nupkg.sha512",
+        "runtimes/win-x64/native/libpng16-16.dll",
+        "runtimes/win-x64/native/libwebp.dll",
+        "runtimes/win-x64/native/libwebpdemux.dll",
+        "runtimes/win-x64/native/libwebpmux.dll",
+        "runtimes/win-x64/native/tiff.dll",
+        "sdl3-cs.native.image.3.5.0.nupkg.sha512",
         "sdl3-cs.native.image.nuspec"
       ]
     },
-    "SDL3-CS.Native.TTF/3.2.2": {
-      "sha512": "KbhWouNkUB2Yj943PSzaGCdGjf7EWHxdGapuNF6qmjbgd/cC4MPX7CHVwEXH8T+7/UfAJTbarUP8A6yf8IyPeQ==",
+    "SDL3-CS.Native.TTF/3.3.0": {
+      "sha512": "O0PobOS31FEQEmcDOxCxOr/6vImxx+q/xgOcZl6ItNzYJ0BbmdR4KhSzjDM74ucR6JmXCDXo0U3vIRSyNzdm9Q==",
       "type": "package",
-      "path": "sdl3-cs.native.ttf/3.2.2",
+      "path": "sdl3-cs.native.ttf/3.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "README.md",
+        "lib/net10.0/SDL3-CS.Native.TTF.dll",
+        "lib/net10.0/SDL3-CS.Native.TTF.xml",
         "lib/net7.0/SDL3-CS.Native.TTF.dll",
         "lib/net7.0/SDL3-CS.Native.TTF.xml",
         "lib/net8.0/SDL3-CS.Native.TTF.dll",
@@ -273,27 +324,30 @@
         "lib/net9.0/SDL3-CS.Native.TTF.dll",
         "lib/net9.0/SDL3-CS.Native.TTF.xml",
         "logo.png",
+        "runtimes/linux-arm64/native/libSDL3_ttf.so",
+        "runtimes/linux-x64/native/libSDL3_ttf.so",
+        "runtimes/osx-arm64/native/libSDL3_ttf.dylib",
+        "runtimes/osx-x64/native/libSDL3_ttf.dylib",
         "runtimes/win-arm64/native/SDL3_ttf.dll",
         "runtimes/win-x64/native/SDL3_ttf.dll",
-        "runtimes/win-x86/native/SDL3_ttf.dll",
-        "sdl3-cs.native.ttf.3.2.2.nupkg.sha512",
+        "sdl3-cs.native.ttf.3.3.0.nupkg.sha512",
         "sdl3-cs.native.ttf.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "SDL3-CS >= 3.3.6",
-      "SDL3-CS.Native >= 3.3.6",
-      "SDL3-CS.Native.Image >= 3.2.4",
-      "SDL3-CS.Native.TTF >= 3.2.2"
+      "SDL3-CS >= 3.4.10.5",
+      "SDL3-CS.Native >= 3.4.2",
+      "SDL3-CS.Native.Image >= 3.5.0",
+      "SDL3-CS.Native.TTF >= 3.3.0"
     ]
   },
   "packageFolders": {
     "/home/katzi/.nuget/packages/": {}
   },
   "project": {
-    "version": "1.1.53",
+    "version": "1.1.54",
     "restore": {
       "projectUniqueName": "/media/SDL3/Smash/Smash/SmashFramework.csproj",
       "projectName": "SmashFramework",
@@ -334,19 +388,19 @@
         "dependencies": {
           "SDL3-CS": {
             "target": "Package",
-            "version": "[3.3.6, )"
+            "version": "[3.4.10.5, )"
           },
           "SDL3-CS.Native": {
             "target": "Package",
-            "version": "[3.3.6, )"
+            "version": "[3.4.2, )"
           },
           "SDL3-CS.Native.Image": {
             "target": "Package",
-            "version": "[3.2.4, )"
+            "version": "[3.5.0, )"
           },
           "SDL3-CS.Native.TTF": {
             "target": "Package",
-            "version": "[3.2.2, )"
+            "version": "[3.3.0, )"
           }
         },
         "imports": [
