@@ -13,6 +13,7 @@
     <RepositoryUrl>https://github.com/Aaron-LW/Smash-Framework</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Description>A very simple framework for making games/graphical applications built on top of SDL3</Description>
+    <IsAotCompatible>true</IsAotCompatible>
   </PropertyGroup>
 
   <ItemGroup>
