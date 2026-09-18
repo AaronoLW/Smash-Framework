@@ -1,6 +1,6 @@
 using System.Numerics;
 
-namespace Smash;
+namespace SmashFramework;
 
 public static class MathHelper
 {

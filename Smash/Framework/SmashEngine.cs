@@ -1,8 +1,6 @@
 using SDL3;
-using Smash.Graphics;
-using Smash.Input;
 
-namespace Smash;
+namespace SmashFramework;
 
 public static class SmashEngine
 {

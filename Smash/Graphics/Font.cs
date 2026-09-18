@@ -1,6 +1,7 @@
 using System.Numerics;
 using SDL3;
-using Smash;
+
+namespace SmashFramework;
 
 public class Font : IDisposable, IAsset
 {

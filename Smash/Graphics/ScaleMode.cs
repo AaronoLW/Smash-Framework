@@ -1,4 +1,4 @@
-namespace Smash.Graphics;
+namespace SmashFramework;
 
 public enum ScaleMode
 {

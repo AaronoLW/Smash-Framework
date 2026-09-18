@@ -2,18 +2,18 @@ using System.Drawing;
 using System.Numerics;
 using SDL3;
 
-namespace Smash.Graphics;
+namespace SmashFramework;
 
 public class Texture2D : IDisposable, IAsset
 {
     public float Width { get; private set; }
     public float Height { get; private set; }
-    
+
     /// <summary>
     /// The combined width and height of this Texture2D
     /// </summary>
     public Vector2 Bounds => new Vector2(Width, Height);
-    
+
     /// <summary>
     /// The handle of this Texture2D instance
     /// </summary>
@@ -36,7 +36,7 @@ public class Texture2D : IDisposable, IAsset
         Width = width;
         Height = height;
         TextureName = textureName;
-        _sourceRectangle = new SDL.FRect { X = 0, Y = 0, W = width, H = height};
+        _sourceRectangle = new SDL.FRect { X = 0, Y = 0, W = width, H = height };
     }
 
     internal Texture2D(nint textureHandle, string textureName, Rectangle sourceRectangle)

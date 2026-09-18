@@ -2,7 +2,7 @@ using System.Numerics;
 using System.Runtime.InteropServices;
 using SDL3;
 
-namespace Smash.Input;
+namespace SmashFramework;
 
 public static class InputHandler
 {
@@ -93,7 +93,7 @@ public static class InputHandler
             MouseX = x;
             MouseY = y;
         }
-        
+
         if (e.Type == (uint)SDL.EventType.MouseWheel)
         {
             ScrollWheelDelta = e.Wheel.Y;

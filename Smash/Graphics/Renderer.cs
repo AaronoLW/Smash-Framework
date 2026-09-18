@@ -2,7 +2,7 @@ using System.Drawing;
 using System.Numerics;
 using SDL3;
 
-namespace Smash.Graphics;
+namespace SmashFramework;
 
 public class Renderer : IDisposable
 {

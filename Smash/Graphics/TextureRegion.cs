@@ -1,6 +1,6 @@
 using System.Numerics;
 
-namespace Smash.Graphics;
+namespace SmashFramework;
 
 public class TextureRegion
 {
@@ -8,7 +8,7 @@ public class TextureRegion
 
     public readonly int X;
     public readonly int Y;
-    
+
     public readonly int Width;
     public readonly int Height;
     public Vector2 Bounds => new Vector2(Width, Height);

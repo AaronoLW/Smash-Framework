@@ -1,6 +1,6 @@
 using SDL3;
 
-namespace Smash;
+namespace SmashFramework;
 
 internal sealed class DeltaTimeCounter
 {

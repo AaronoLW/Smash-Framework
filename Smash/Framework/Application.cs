@@ -1,14 +1,13 @@
 using System.Numerics;
 using SDL3;
-using Smash.Graphics;
 
-namespace Smash;
+namespace SmashFramework;
 
 public abstract class Application
 {
     internal static bool _applicationShouldClose = false;
 
-    public virtual void Start() {}
+    public virtual void Start() { }
     public virtual void Update(double deltaTime) { }
     public virtual void Render() { }
     public virtual void End() { }
@@ -33,4 +32,4 @@ public abstract class Application
     {
         return _applicationShouldClose;
     }
-}    
+}

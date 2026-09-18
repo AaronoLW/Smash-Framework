@@ -1,7 +1,6 @@
-using Smash.Graphics;
 using SDL3;
 
-namespace Smash.Graphics;
+namespace SmashFramework;
 
 public static class AssetManager
 {
@@ -18,7 +17,7 @@ public static class AssetManager
     public static T Get<T>(string assetName) where T : IAsset
     {
         return (T)_loadedAssets[_aliases[assetName]];
-    } 
+    }
 
     /// <summary>
     /// Tries to get the asset with the specified name
@@ -39,7 +38,7 @@ public static class AssetManager
     public static T Get<T>(int assetId) where T : IAsset
     {
         return (T)_loadedAssets[assetId];
-    } 
+    }
 
     /// <summary>
     /// Tries to get the asset with the specified id
