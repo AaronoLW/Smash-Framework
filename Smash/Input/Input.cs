@@ -4,7 +4,7 @@ using SDL3;
 
 namespace SmashFramework;
 
-public static class InputHandler
+public static class Input
 {
     public static float MouseX { get; private set; }
     public static float MouseY { get; private set; }

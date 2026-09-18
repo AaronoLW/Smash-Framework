@@ -28,7 +28,7 @@ public static class SmashEngine
     public static void Update(bool claimEvents = true)
     {
         _deltaTimeCounter.Update();
-        InputHandler.Update();
+        Input.Update();
 
         if (claimEvents)
         {
@@ -59,7 +59,7 @@ public static class SmashEngine
             Application._applicationShouldClose = true;
         }
 
-        InputHandler.Event(e);
+        Input.Event(e);
     }
 
     public static void Stop()
