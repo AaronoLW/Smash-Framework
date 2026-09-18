@@ -2,23 +2,15 @@ using System.Numerics;
 
 namespace SmashFramework;
 
-public class TextureRegion
+public class TextureRegion(string baseTextureName, int x, int y, int width, int height)
 {
-    public readonly string BaseTextureName;
+    public readonly string BaseTextureName = baseTextureName;
 
-    public readonly int X;
-    public readonly int Y;
+    public readonly int X = x;
+    public readonly int Y = y;
+    public Vector2 Position => new(X, Y);
 
-    public readonly int Width;
-    public readonly int Height;
-    public Vector2 Bounds => new Vector2(Width, Height);
-
-    public TextureRegion(string baseTextureName, int x, int y, int widht, int height)
-    {
-        X = x;
-        Y = y;
-        Width = widht;
-        Height = height;
-        BaseTextureName = baseTextureName;
-    }
+    public readonly int Width = width;
+    public readonly int Height = height;
+    public Vector2 Size => new(Width, Height);
 }

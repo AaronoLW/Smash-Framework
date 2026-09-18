@@ -23,7 +23,7 @@ public abstract class Application
         window = new Window(windowHandle);
         renderer = new Renderer(rendererHandle);
 
-        window.Bounds = new Vector2(width, height);
+        window.Size = new Vector2(width, height);
         SmashEngine._windows.Add(window);
         SmashEngine._fontEngine = TTF.CreateRendererTextEngine(rendererHandle);
     }

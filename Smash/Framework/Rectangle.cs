@@ -15,7 +15,7 @@ public class Rectangle
 
     public float Width;
     public float Height;
-    public Vector2 Bounds
+    public Vector2 Size
     {
         get { return new Vector2(Width, Height); }
         set { Width = value.X; Height = value.Y; }
@@ -36,10 +36,10 @@ public class Rectangle
         Height = height;
     }
 
-    public Rectangle(Vector2 position, Vector2 bounds)
+    public Rectangle(Vector2 position, Vector2 size)
     {
         Position = position;
-        Bounds = bounds;
+        Size = size;
     }
 
     public Rectangle(SDL.FRect sdlRect)

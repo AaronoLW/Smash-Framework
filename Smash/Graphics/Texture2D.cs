@@ -8,24 +8,14 @@ public class Texture2D : IDisposable, IAsset
 {
     public float Width { get; private set; }
     public float Height { get; private set; }
+    public Vector2 Size => new(Width, Height);
 
-    /// <summary>
-    /// The combined width and height of this Texture2D
-    /// </summary>
-    public Vector2 Bounds => new Vector2(Width, Height);
-
-    /// <summary>
-    /// The handle of this Texture2D instance
-    /// </summary>
     public readonly nint Handle;
 
-    /// <summary>
-    /// The name of the texture gotten from the actual filename without the extension
-    /// </summary>
     public readonly string TextureName;
 
     internal readonly SDL.FRect _sourceRectangle;
-    public Rectangle SourceRectangle => new Rectangle(_sourceRectangle);
+    public Rectangle SourceRectangle => new(_sourceRectangle);
 
     internal Color _modulatedColor;
 
