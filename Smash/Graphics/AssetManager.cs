@@ -4,7 +4,7 @@ namespace SmashFramework;
 
 public static class AssetManager
 {
-    internal static List<IAsset> _loadedAssets { get; } = new();
+    internal static List<IAsset> LoadedAssets { get; } = new();
     internal static Dictionary<string, int> _aliases = new();
 
     private static string _rootDirectoryPath = "";
@@ -16,7 +16,7 @@ public static class AssetManager
     /// </summary>
     public static T Get<T>(string assetName) where T : IAsset
     {
-        return (T)_loadedAssets[_aliases[assetName]];
+        return (T)LoadedAssets[_aliases[assetName]];
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ public static class AssetManager
         if (!_aliases.TryGetValue(assetName, out id))
             return default;
 
-        return (T)_loadedAssets[id];
+        return (T)LoadedAssets[id];
     }
 
     /// <summary>
@@ -37,7 +37,7 @@ public static class AssetManager
     /// </summary>
     public static T Get<T>(int assetId) where T : IAsset
     {
-        return (T)_loadedAssets[assetId];
+        return (T)LoadedAssets[assetId];
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ public static class AssetManager
     /// </summary>
     public static T? TryGet<T>(int assetId) where T : IAsset
     {
-        if (_loadedAssets.Count - 1 < assetId) return default;
+        if (LoadedAssets.Count - 1 < assetId) return default;
 
-        return (T)_loadedAssets[assetId];
+        return (T)LoadedAssets[assetId];
     }
 
     public static int GetAssetId(string assetName)
@@ -106,8 +106,8 @@ public static class AssetManager
         SDL.SetTextureBlendMode(texture.Handle, (SDL.BlendMode)_defaultBlendMode);
         SDL.SetTextureScaleMode(texture.Handle, (SDL.ScaleMode)_defaultScaleMode);
 
-        _aliases.Add(fileName, _loadedAssets.Count);
-        _loadedAssets.Add(texture);
+        _aliases.Add(fileName, LoadedAssets.Count);
+        LoadedAssets.Add(texture);
         return texture;
     }
 
@@ -118,12 +118,12 @@ public static class AssetManager
         if (!_aliases.TryGetValue(textureRegion.BaseTextureName, out baseTextureId))
             throw new Exception($"""Base texture "{textureRegion.BaseTextureName}" could not be found""");
 
-        Texture2D? baseTexture = _loadedAssets[baseTextureId] as Texture2D;
+        Texture2D? baseTexture = LoadedAssets[baseTextureId] as Texture2D;
         if (baseTexture == null) throw new Exception($"""Base texture {textureRegion.BaseTextureName} doesn't exist""");
 
         Texture2D texture = new Texture2D(baseTexture.Handle, name, new Rectangle(textureRegion.X, textureRegion.Y, textureRegion.Width, textureRegion.Height));
-        _aliases.Add(name, _loadedAssets.Count);
-        _loadedAssets.Add(texture);
+        _aliases.Add(name, LoadedAssets.Count);
+        LoadedAssets.Add(texture);
 
         return texture;
     }
@@ -140,13 +140,13 @@ public static class AssetManager
 
         Font font = new Font(fullPath);
 
-        _aliases.Add(fontName, _loadedAssets.Count);
-        _loadedAssets.Add(font);
+        _aliases.Add(fontName, LoadedAssets.Count);
+        LoadedAssets.Add(font);
     }
 
     public static void Dispose()
     {
-        foreach (IAsset asset in _loadedAssets)
+        foreach (IAsset asset in LoadedAssets)
         {
             asset.Dispose();
         }
