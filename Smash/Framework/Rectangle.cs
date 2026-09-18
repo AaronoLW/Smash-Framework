@@ -5,22 +5,16 @@ namespace SmashFramework;
 
 public class Rectangle
 {
-    private float _x;
-    private float _y;
-
-    public float X { get { return _x; } set { _x = value; } }
-    public float Y { get { return _y; } set { _y = value; } }
+    public float X;
+    public float Y;
     public Vector2 Position
     {
         get { return new Vector2(X, Y); }
         set { X = value.X; Y = value.Y; }
     }
 
-    private float _width;
-    private float _height;
-
-    public float Width { get { return _width; } set { _width = value; } }
-    public float Height { get { return _height; } set { _height = value; } }
+    public float Width;
+    public float Height;
     public Vector2 Bounds
     {
         get { return new Vector2(Width, Height); }
@@ -99,17 +93,17 @@ public class Rectangle
 
     public Vector2 GetRandomPositionInRectangle(Random random)
     {
-        return new Vector2(random.Next((int)_x, (int)(_x + Width)), random.Next((int)_y, (int)(_y + Height)));
+        return new Vector2(random.Next((int)X, (int)(X + Width)), random.Next((int)Y, (int)(Y + Height)));
     }
 
     public Rectangle Clone()
     {
         return new Rectangle
         {
-            _x = this._x,
-            _y = this._y,
-            _width = this._width,
-            _height = this._height,
+            X = X,
+            Y = Y,
+            Width = Width,
+            Height = Height,
         };
     }
 }
