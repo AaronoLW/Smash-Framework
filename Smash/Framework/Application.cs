@@ -12,9 +12,9 @@ public abstract class Application
     public virtual void Render() { }
     public virtual void End() { }
 
-    protected void CreateWindowAndRenderer(string title, int width, int height, out Window window, out Renderer renderer)
+    protected void CreateWindowAndRenderer(string title, int width, int height, SDL.WindowFlags flags, out Window window, out Renderer renderer)
     {
-        if (!SDL.CreateWindowAndRenderer(title, width, height, 0, out nint windowHandle, out nint rendererHandle))
+        if (!SDL.CreateWindowAndRenderer(title, width, height, flags, out nint windowHandle, out nint rendererHandle))
         {
             SDL.LogError(SDL.LogCategory.Application, $"Error creating window and rendering: {SDL.GetError()}");
             throw new Exception($"SDL ERROR: Error creating window and rendering: {SDL.GetError}");
