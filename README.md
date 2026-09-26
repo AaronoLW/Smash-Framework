@@ -1,1 +1,1 @@
-Soon to be usable probably maybe
+A very simple framework for making games/graphical applications built on top of SDL3
